@@ -1,8 +1,10 @@
 package com.lee.admin.controller;
 
+import com.github.xiaoymin.knife4j.annotations.ApiOperationSupport;
 import com.lee.admin.model.Menu;
 import com.lee.admin.model.PageNumPageSize;
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
 import java.util.ArrayList;
 import java.util.List;
@@ -31,6 +33,8 @@ public class MenuController {
   }
 
   @ApiOperation("查询单个")
+  @ApiOperationSupport(author = "luozehua")
+  @ApiImplicitParam(name = "id", value = "菜单ID", required = true, example = "1")
   @GetMapping("/findById/{id}")
   public Menu findById(@PathVariable("id") Integer id){
 
