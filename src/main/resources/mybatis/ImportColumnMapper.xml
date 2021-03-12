@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lxh.test.modules.admin.mapper.ImportColumnMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.lxh.test.modules.admin.domain.po.ImportColumn">
+        <id column="id" property="id" />
+        <result column="table_id" property="tableId" />
+        <result column="column_attr_index" property="columnAttrIndex" />
+        <result column="column_name" property="columnName" />
+        <result column="description" property="description" />
+        <result column="disable" property="disable" />
+        <result column="create_time" property="createTime" />
+        <result column="create_user_id" property="createUserId" />
+        <result column="update_time" property="updateTime" />
+        <result column="update_user_id" property="updateUserId" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, table_id, column_attr_index, column_name, description, disable, create_time, create_user_id, update_time, update_user_id
+    </sql>
+
+</mapper>

@@ -1,8 +1,10 @@
 package com.lee.admin.controller;
 
 import com.lee.admin.model.Role;
+import com.lee.admin.service.RoleService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -21,6 +23,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/role")
 public class RoleController {
 
+  @Autowired
+  private RoleService roleService;
+
+
   @ApiOperation("新增")
   @PostMapping("/save")
   public void save(@RequestBody Role role){
@@ -29,8 +35,10 @@ public class RoleController {
 
   @ApiOperation("查询单个")
   @GetMapping("/findById/{id}")
-  public void findById(@PathVariable("id") Integer id){
+  public Role findById(@PathVariable("id") Integer id){
 
+    Role role = roleService.findById(id);
+    return role;
   }
 
   @ApiOperation("修改")

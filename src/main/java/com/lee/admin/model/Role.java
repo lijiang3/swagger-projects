@@ -23,4 +23,6 @@ public class Role {
   @ApiModelProperty(value = "角色描述")
   private String desc;
 
+  @ApiModelProperty(value = "别名")
+  private String nickName;
 }

@@ -6,7 +6,7 @@
   <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
-    <version>2.3.0.RELEASE</version>
+    <version>2.2.0.RELEASE</version>
     <relativePath/> <!-- lookup parent from repository -->
   </parent>
   <groupId>com.lee</groupId>
@@ -34,14 +34,23 @@
       <scope>test</scope>
     </dependency>
 
+    <!--热部署-->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-devtools</artifactId>
+      <scope>runtime</scope>
+      <optional>true</optional>
+    </dependency>
+
     <!--knife4j-spring-boot-starter是Swagger-Bootstrap-UI的最新版本-->
     <!--访问：http://ip:port/doc.html 即可-->
+    <!--如果开发者使用OpenAPI3的结构，底层框架依赖springfox3.0.0,可以考虑Knife4j的3.x版本-->
     <dependency>
       <groupId>com.github.xiaoymin</groupId>
       <artifactId>knife4j-spring-boot-starter</artifactId>
       <version>3.0.2</version>
     </dependency>
-    <!--springfox-boot-starter就是Swagger的Starter-->
+    <!--springfox-boot-starter就是Swagger3的Starter-->
     <!--访问 :http://ip:port/swagger-ui/ 即可-->
     <dependency>
       <groupId>io.springfox</groupId>
@@ -49,10 +58,29 @@
       <version>3.0.0</version>
     </dependency>
 
+    <!--使用最新的8.0.x版本-->
+    <dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+    </dependency>
+
+    <!--使用最新的1.18.x版本-->
     <dependency>
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>
-      <version>1.18.10</version>
+    </dependency>
+
+    <!-- druid连接池 -->
+    <dependency>
+      <groupId>com.alibaba</groupId>
+      <artifactId>druid-spring-boot-starter</artifactId>
+      <version>1.2.1</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.mybatis.spring.boot</groupId>
+      <artifactId>mybatis-spring-boot-starter</artifactId>
+      <version>2.1.0</version>
     </dependency>
   </dependencies>
 

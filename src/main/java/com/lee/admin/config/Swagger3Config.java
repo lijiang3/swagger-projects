@@ -22,11 +22,11 @@ import springfox.documentation.spring.web.plugins.Docket;
 
 /**
  * @author shuang.kou
- * @description swagger 相关配置
+ * @description swagger3 相关配置
  */
 @Configuration
 @EnableOpenApi
-public class SwaggerConfig {
+public class Swagger3Config {
 
   @Bean
   public Docket createRestApi() {

@@ -1,6 +1,18 @@
 server:
   port: 8081
 
+spring:
+  profiles:
+    active: dev
+
+
+#配置MyBatis
+mybatis:
+  type-aliases-package: com.lee.admin.model
+  mapper-locations: classpath:mybatis/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+
 logging:
   level:
     ROOT: info

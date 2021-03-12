@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.lee.admin.dao.ImportTemplateDao">
+
+    <select id="getImportTemplates" resultType="com.lee.admin.model.GetImportTemplates">
+        select
+          id as code, table_name as value
+        from import_template
+        where disable = 'N'
+    </select>
+</mapper>

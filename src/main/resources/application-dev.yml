@@ -1,0 +1,9 @@
+###bmsoft开发环境
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      url: jdbc:mysql://106.54.84.115:3306/lxhtest?Unicode=true&characterEncoding=UTF-8&serverTimezone=GMT%2B8
+      username: bmsoft
+      password: bmsoft@123
+      driver-class-name: com.mysql.cj.jdbc.Driver
