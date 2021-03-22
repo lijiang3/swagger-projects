@@ -87,10 +87,10 @@ public class ImportColumnConfigController {
   }
 
   /**
-   * 标记相似度
-   * 尽可能少标记
+   * 相似度比对开关
+   * 尽可能少标记，只比对两三个字段，节约时间
    */
-  @ApiOperation(value = "标记相似度", notes = "标记相似度")
+  @ApiOperation(value = "相似度比对开关", notes = "相似度比对开关")
   @GetMapping("/switchSimilarityOnAndOff")
   public void switchSimilarityOnAndOff() {
   }

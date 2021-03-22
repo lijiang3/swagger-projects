@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
  * 将一个excel转变为数据库表，数据库表包括{表名称，表描述，sheet页开始下标，sheet页结束下标,row开始下标,col开始下标,是否可用标记}
  * 说明：一对一关系，如果一个excel只包括一个sheet页，则一个excel代表一个数据库表，sheet页开始结束下标为0；
  * 一对多关系，如果一个excel包括多个sheet页，则规定相同sheet页内容为一个数据库表，不同sheet页内容表示不同的数据库表，
- * 如果相同内容的sheet页连续，则设置sheet页的开始下标和结束下标。
+ * 如果相同内容的sheet页连续，设置sheet页的开始下标和结束下标。
  * </p>
  *
  * @author lxh
@@ -31,7 +31,10 @@ public class ImportTemplateConfigController {
   @Autowired
   private ImportTemplateService importTemplateService;
 
-  /*查询可用的模板，如果查询为空则添加*/
+  /**
+   * 查询可用的模板，如果查询为空则添加
+   * 下拉框展示
+   */
   @ApiOperation(value = "查询模板", notes = "查询模板")
   @GetMapping("/getImportTemplates")
   public List<GetImportTemplates> getImportTemplates() {
@@ -57,12 +60,20 @@ public class ImportTemplateConfigController {
   }
 
   /**
-   * 强制自动导入开启，ON开启OFF关闭
+   * 强制自动导入开关，ON开启OFF关闭
    * 数据库表列信息与excel列信息相似度在60%才有作用
    */
-  @ApiOperation(value = "启用禁用", notes = "启用禁用")
-  @GetMapping("/switchForceOnAndOff")
+  @ApiOperation(value = "强制自动导入开关", notes = "强制自动导入开关")
+  @GetMapping("/switchForceAutoOnAndOff")
   public void switchForceOnAndOff() {
+  }
+
+  /**
+   * 相似度比对开关，ON开启OFF关闭
+   */
+  @ApiOperation(value = "相似度比对开关", notes = "相似度比对开关")
+  @GetMapping("/switchSimilarityOnAndOff")
+  public void switchSimilarityOnAndOff() {
   }
 }
 
